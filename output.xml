@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.7.4 on win32)" generated="20210315 11:07:16.391" rpa="false">
+<suite id="s1" name="WEB" source="D:\WR_test\WEB">
+<suite id="s1-s1" name="Tc Ebay" source="D:\WR_test\WEB\tc_ebay.robot">
+<test id="s1-s1-t1" name="Scenario 2: Access a Product via Search">
+<kw name="Go to www.ebay.com" library="keyword_ebay">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<msg timestamp="20210315 11:07:17.000" level="INFO">Opening browser 'Chrome' to base url 'https://www.ebay.com/'.</msg>
+<status status="PASS" starttime="20210315 11:07:16.999" endtime="20210315 11:07:20.911"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210315 11:07:20.912" endtime="20210315 11:07:21.047"></status>
+</kw>
+<status status="PASS" starttime="20210315 11:07:16.999" endtime="20210315 11:07:21.048"></status>
+</kw>
+<kw name="Type any search in the search bar" library="keyword_ebay">
+<arguments>
+<arg>${search_item}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_search}</arg>
+</arguments>
+<status status="PASS" starttime="20210315 11:07:21.049" endtime="20210315 11:07:21.119"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_search}</arg>
+<arg>${input}</arg>
+</arguments>
+<msg timestamp="20210315 11:07:21.122" level="INFO">Typing text 'MacBook' into text field '//input[@id='gh-ac']'.</msg>
+<status status="PASS" starttime="20210315 11:07:21.120" endtime="20210315 11:07:21.364"></status>
+</kw>
+<status status="PASS" starttime="20210315 11:07:21.048" endtime="20210315 11:07:21.365"></status>
+</kw>
+<kw name="Change the Search category" library="keyword_ebay">
+<arguments>
+<arg>${category}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ddl_allCaterories}</arg>
+</arguments>
+<status status="PASS" starttime="20210315 11:07:21.366" endtime="20210315 11:07:21.478"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//option[contains(text(),'${category}')]</arg>
+</arguments>
+<status status="PASS" starttime="20210315 11:07:21.478" endtime="20210315 11:07:21.531"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_search}</arg>
+</arguments>
+<status status="PASS" starttime="20210315 11:07:21.532" endtime="20210315 11:07:21.582"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ddl_allCaterories}</arg>
+</arguments>
+<msg timestamp="20210315 11:07:21.583" level="INFO">Clicking element '//select[@id='gh-cat']'.</msg>
+<status status="PASS" starttime="20210315 11:07:21.582" endtime="20210315 11:07:21.684"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//option[contains(text(),'${category}')]</arg>
+</arguments>
+<msg timestamp="20210315 11:07:21.685" level="INFO">Clicking element '//option[contains(text(),'Computers/Tablets &amp; Networking')]'.</msg>
+<status status="PASS" starttime="20210315 11:07:21.685" endtime="20210315 11:07:21.739"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_search}</arg>
+</arguments>
+<msg timestamp="20210315 11:07:21.740" level="INFO">Clicking element '//input[@id='gh-btn']'.</msg>
+<status status="PASS" starttime="20210315 11:07:21.739" endtime="20210315 11:07:24.176"></status>
+</kw>
+<status status="PASS" starttime="20210315 11:07:21.365" endtime="20210315 11:07:24.176"></status>
+</kw>
+<kw name="Verify that the page loads completely" library="keyword_ebay">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_verify_allList}</arg>
+</arguments>
+<status status="PASS" starttime="20210315 11:07:24.177" endtime="20210315 11:07:24.197"></status>
+</kw>
+<status status="PASS" starttime="20210315 11:07:24.177" endtime="20210315 11:07:24.198"></status>
+</kw>
+<kw name="Verify that the first result name matches with the search" library="keyword_ebay">
+<arguments>
+<arg>${search_item}</arg>
+<arg>${category}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//span[contains(text(),'${search_item}')]</arg>
+</arguments>
+<status status="PASS" starttime="20210315 11:07:24.199" endtime="20210315 11:07:24.233"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//span[contains(text(),'${category}')]</arg>
+</arguments>
+<status status="PASS" starttime="20210315 11:07:24.234" endtime="20210315 11:07:24.263"></status>
+</kw>
+<status status="PASS" starttime="20210315 11:07:24.198" endtime="20210315 11:07:24.263"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210315 11:07:24.264" endtime="20210315 11:07:26.466"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210315 11:07:26.468" endtime="20210315 11:07:26.469"></status>
+</kw>
+<status status="PASS" starttime="20210315 11:07:16.998" endtime="20210315 11:07:26.470" critical="yes"></status>
+</test>
+<doc>Scenario 2: Access a Product via Search</doc>
+<status status="PASS" starttime="20210315 11:07:16.433" endtime="20210315 11:07:26.479"></status>
+</suite>
+<status status="PASS" starttime="20210315 11:07:16.394" endtime="20210315 11:07:26.492"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="WEB">WEB</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Tc Ebay">WEB.Tc Ebay</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
